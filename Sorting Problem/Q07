@@ -1,0 +1,21 @@
+# Input array
+arr = [10, 20, 30, 40, 50]
+
+n = len(arr)
+passes = 0
+
+for i in range(n - 1):
+    swapped = False
+    passes += 1
+
+    for j in range(n - i - 1):
+        if arr[j] > arr[j + 1]:
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            swapped = True
+
+    # Stop if no swapping occurs
+    if not swapped:
+        print("Array is already sorted")
+        break
+
+print("Passes required:", passes)
